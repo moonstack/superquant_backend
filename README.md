@@ -1,32 +1,15 @@
+从streamlit到fastapi+jinja2, 再到nicegui
 
-superquant_backend/
-├── app/
-│   ├── __init__.py
-│   ├── main.py                 # FastAPI 启动入口
-│   ├── api/                    # 路由接口层
-│   │   ├── __init__.py
-│   │   ├── factors.py          # 因子模板相关接口
-│   │   ├── backtest.py         # 回测相关接口
-│   │   ├── trade.py            # 实盘交易接口
-│   ├── services/               # 业务逻辑实现层
-│   │   ├── __init__.py
-│   │   ├── factor_service.py
-│   │   ├── backtest_service.py
-│   │   ├── trade_service.py
-│   ├── models/                 # 数据模型（Pydantic/响应结构）
-│   │   ├── __init__.py
-│   │   ├── factor_model.py
-│   │   ├── backtest_model.py
-│   │   ├── trade_model.py
-│   ├── core/                   # 核心配置与工具模块
-│   │   ├── __init__.py
-│   │   ├── config.py           # 配置文件加载
-│   │   ├── task_runner.py      # 回测异步任务调度器（如 asyncio、thread）
-│   │   ├── file_io.py          # 因子模板的读写（如 JSON、YAML）
-│   ├── data/                   # 数据存储（或指向本地数据源）
-│   │   ├── factors/            # 自定义因子模板文件夹
-│   │   ├── backtest/           # 回测结果文件（如 HDF5、图像、JSON）
-│   │   ├── trade_logs/         # 实盘日志
-├── requirements.txt
-├── README.md
-└── run.py                      # 入口脚本（可选 uvicorn 启动）
+几次重构, 干脆拆了, 我写后端就好, 前端是前端的前端, 后端不要碰前端
+
+写逻辑的不要陷入写渲染(CSS+JS)的复杂叙事, 真的会掉头发....
+
+
+当前就完成了骨架, 
+
+这个项目是基于QMT的本地api, 用于SuperQuant的后端接口
+
+你说我二次封装也好, 我只是为了让用户更方便的配置因子, 实现低代码量的策略开发和逻辑分析
+
+然后就可以通过你自己的账户,来实现策略的交易了.
+
